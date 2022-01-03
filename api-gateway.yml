@@ -1,0 +1,28 @@
+# Port
+server:
+  port: 9191
+
+spring:
+  application:
+      name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: AUTORIZACIONAPUESTAS-SERVICE
+          uri: lb://AUTORIZACIONAPUESTAS-SERVICE
+          predicates:
+            - Path=/autorizacionapuestas/**
+        - id: TICKET-SERVICE
+          uri: lb://TICKET-SERVICE
+          predicates:
+            - Path=/tickets/**
+   
+# Eureka Server
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+        defaultZone: http://localhost:8761/eureka/
+  instance:
+      hostname: localhost
