@@ -4,7 +4,12 @@ server:
 spring:
   application:
     name: HYSTRIX-DASHBOARD
-    
+
+# Hysterix Dashboard configuration 
+hysterix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+
 # Eureka Server
 eureka:
   client:
