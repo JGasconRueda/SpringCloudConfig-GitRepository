@@ -5,8 +5,8 @@ spring:
   application:
     name: HYSTRIX-DASHBOARD
 
-# Hysterix Dashboard configuration 
-hysterix:
+# Hystrix Dashboard configuration 
+hystrix:
   dashboard:
     proxy-stream-allow-list: "*"
 
