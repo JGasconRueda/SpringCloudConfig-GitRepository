@@ -40,7 +40,7 @@ management:
     web:
       exposure:
         include: hystrix.stream
-
+        
 # Eureka Server
 eureka:
   client:
