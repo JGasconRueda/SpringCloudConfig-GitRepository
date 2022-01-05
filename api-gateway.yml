@@ -12,10 +12,20 @@ spring:
           uri: lb://AUTORIZACIONAPUESTAS-SERVICE
           predicates:
             - Path=/autorizacionapuestas/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: AUTORIZACIONAPUESTAS-SERVICE
+                fallbackuri: forward:/autorizacionapuestasServiceFallBack
         - id: TICKET-SERVICE
           uri: lb://TICKET-SERVICE
           predicates:
             - Path=/tickets/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: TICKET-SERVICEE
+                fallbackuri: forward:/ticketServiceFallBack  
    
 # Eureka Server
 eureka:
