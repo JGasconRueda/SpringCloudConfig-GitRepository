@@ -39,7 +39,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: hystryx.stream
+        include: hystrix.stream
 
 # Eureka Server
 eureka:
