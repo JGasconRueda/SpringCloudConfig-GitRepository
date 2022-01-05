@@ -26,7 +26,15 @@ spring:
               args:
                 name: TICKET-SERVICEE
                 fallbackuri: forward:/ticketServiceFallBack  
-   
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+
 # Eureka Server
 eureka:
   client:
