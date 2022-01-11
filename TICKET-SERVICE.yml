@@ -7,3 +7,5 @@ spring:
       matching-strategy: ant_path_matcher
   application:
     name: TICKET-SERVICE
+  zipkin:
+    baseUrl: http://localhost:9411/  
